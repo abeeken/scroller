@@ -1,0 +1,23 @@
+This is a simple little Javascript element scroller, built using the scriptaculous libraries to control movement (you can get these here: http://script.aculo.us/); it requires a double layer div.
+
+The outer layer div is fixed width - this should be the column width * the number of columns you want to show at any time. This then has an overflow:hidden value so that it hides the columns we don't want to see.
+
+The inner layer should be the width of the number of colums * the column width.
+
+The columns are also floated left so that they sit in a neat little line!
+
+Once we have our scroller constructed, we call our scroller class like so:
+
+myscroll = new scroller(
+	-> name of the inner scroll element; the bit that's actually going to move,
+	-> width of the outer div,
+	-> width of an individual column,
+	-> number of columns,
+	-> a loop back boolean, true or false - if true, when you try and scroll past the end of the scroller in either direction, it loops back on itself
+)
+
+We then set up left and right scroll elements which, when clicked, will perform the shifting.
+
+These need to have onclick values of myscroll.left_scroll() - shifts the inner div to the left; and myscroll().right_scroll() - shifts the div to the right.
+
+Have a look at the included index.php for example usage; drop me a line at andrewbeeken.co.uk if you find this useful!
